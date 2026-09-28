@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Birthday Quest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="wrap">
+    <canvas id="game" width="320" height="240"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-left"><div id="hud-hearts"></div><div id="hud-level"></div></div>
+      <div class="hud-right"><div id="hud-area"></div><div id="hud-chests"></div></div>
+    </div>
+
+    <div id="bossbar" class="hidden">
+      <div id="bossname"></div>
+      <div id="bosshp"><div id="bosshpfill"></div></div>
+    </div>
+
+    <div id="fade"></div>
+
+    <div id="toast"></div>
+
+    <div id="title" class="screen">
+      <div>
+        <div class="title-small">A BIRTHDAY QUEST FOR</div>
+        <h1 id="title-name"></h1>
+      </div>
+      <div>
+        <div class="menu">
+          <button id="btn-start">START</button>
+          <button id="btn-new" class="hidden">NEW GAME</button>
+        </div>
+        <div class="hint">WASD to move &middot; SPACE to interact &middot; MOUSE to aim + shoot</div>
+      </div>
+    </div>
+
+    <div id="modal" class="modal hidden">
+      <div class="box">
+        <div id="modal-media"></div>
+        <h2 id="modal-title"></h2>
+        <div id="modal-text"></div>
+        <div class="modal-hint">&#9654; SPACE</div>
+      </div>
+    </div>
+
+    <div id="celebrate" class="screen hidden">
+      <div class="cele-top">HAPPY BIRTHDAY</div>
+      <h1 id="cele-name"></h1>
+      <p id="cele-text"></p>
+      <p id="cele-from"></p>
+      <div class="hint">Press SPACE for one more surprise</div>
+    </div>
+
+    <div id="memories" class="screen hidden">
+      <div id="memories-caption" class="hidden"></div>
+      <video id="memories-video" playsinline preload="auto"></video>
+    </div>
+
+    <div id="dialog" class="hidden">
+      <img id="dialog-icon" class="hidden" alt="">
+      <div id="dialog-text"></div>
+    </div>
+
+  </div>
+
+  <div id="touch" class="hidden">
+    <div class="dpad">
+      <button data-dir="up">&#9650;</button>
+      <button data-dir="left">&#9664;</button>
+      <button data-dir="right">&#9654;</button>
+      <button data-dir="down">&#9660;</button>
+    </div>
+    <button id="btn-a">A</button>
+  </div>
+
+  <script src="js/content.js"></script>
+  <script src="js/world.js"></script>
+  <script src="js/songs.js"></script>
+  <script src="js/sprites.js"></script>
+  <script src="js/maze.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/bosses.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
